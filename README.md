@@ -12,7 +12,10 @@ https://stackoverflow.com/questions/55830414/how-to-read-text-file-in-react
 
 If you want to get a .txt file first you have to import it:
 
-`import raw from '../constants/foo.txt';`
+```
+import raw from '../constants/foo.txt';
+```
+
 After that, you could fetch it and transform into text:
 
 ```
