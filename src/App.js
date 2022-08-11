@@ -11,7 +11,9 @@ function App() {
     reader.onload = (e) => {
       const text = e.target.result;
       console.log(text);
-      alert(text);
+      //alert(text);
+      var preview = document.getElementById('userFile');
+      preview.innerHTML = text;
     };
     reader.readAsText(e.target.files[0]);
   };
@@ -21,7 +23,7 @@ function App() {
       .then(r => r.text())
       .then(text => {
         console.log('text decoded:', text);
-        var preview = document.getElementById('show-text');
+        var preview = document.getElementById('langFile');
         preview.innerHTML = text;
         //TEXT = text;
         //alert(text);
@@ -33,7 +35,12 @@ function App() {
     <div>
       <input type="file" onChange={showFile} />
       <button onClick = {test()}>View Text</button>
-      <div id="show-text">Choose text File</div>
+
+      <h1>Text from user file</h1>
+      <div id="userFile">Choose text File</div>
+
+      <h1>Text from langFile</h1>
+      <div id="langFile">Choose text File</div>
     </div>
   );
 }
